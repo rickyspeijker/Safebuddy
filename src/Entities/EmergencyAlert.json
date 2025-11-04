@@ -1,0 +1,61 @@
+{
+  "name": "EmergencyAlert",
+  "type": "object",
+  "properties": {
+    "location": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "lat",
+        "lng"
+      ]
+    },
+    "alert_type": {
+      "type": "string",
+      "enum": [
+        "emergency",
+        "feeling_unsafe",
+        "check_in_failed"
+      ],
+      "default": "emergency"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "responding",
+        "resolved",
+        "false_alarm"
+      ],
+      "default": "active"
+    },
+    "message": {
+      "type": "string",
+      "description": "Optional message from user"
+    },
+    "notified_contacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of contact emails/phones notified"
+    },
+    "resolved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "location"
+  ]
+}

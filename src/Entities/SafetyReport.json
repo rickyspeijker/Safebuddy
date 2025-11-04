@@ -1,0 +1,73 @@
+{
+  "name": "SafetyReport",
+  "type": "object",
+  "properties": {
+    "location": {
+      "type": "object",
+      "description": "Location coordinates",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "lat",
+        "lng"
+      ]
+    },
+    "report_type": {
+      "type": "string",
+      "enum": [
+        "unsafe_area",
+        "poor_lighting",
+        "isolated",
+        "harassment",
+        "safe_spot",
+        "well_lit"
+      ],
+      "description": "Type of safety report"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium",
+      "description": "Severity level of the report"
+    },
+    "description": {
+      "type": "string",
+      "description": "Details about the location"
+    },
+    "time_of_day": {
+      "type": "string",
+      "description": "When the incident occurred or was noticed"
+    },
+    "upvotes": {
+      "type": "number",
+      "default": 0,
+      "description": "Community validation count"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "resolved",
+        "reviewing"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "location",
+    "report_type"
+  ]
+}

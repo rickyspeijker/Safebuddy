@@ -1,0 +1,79 @@
+{
+  "name": "BuddyRequest",
+  "type": "object",
+  "properties": {
+    "from_location": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "lat",
+        "lng"
+      ]
+    },
+    "to_location": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "lat",
+        "lng"
+      ]
+    },
+    "travel_mode": {
+      "type": "string",
+      "enum": [
+        "walking",
+        "biking",
+        "rideshare"
+      ],
+      "default": "walking"
+    },
+    "departure_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Planned departure time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "matched",
+        "completed",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "matched_user_id": {
+      "type": "string",
+      "description": "ID of matched buddy"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the trip"
+    }
+  },
+  "required": [
+    "from_location",
+    "to_location",
+    "departure_time"
+  ]
+}

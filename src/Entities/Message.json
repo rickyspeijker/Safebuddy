@@ -1,0 +1,42 @@
+{
+  "name": "Message",
+  "type": "object",
+  "properties": {
+    "conversation_id": {
+      "type": "string",
+      "description": "ID linking messages to a conversation"
+    },
+    "sender_id": {
+      "type": "string",
+      "description": "User ID of the sender"
+    },
+    "sender_name": {
+      "type": "string",
+      "description": "Name of the sender"
+    },
+    "receiver_id": {
+      "type": "string",
+      "description": "User ID of the receiver"
+    },
+    "content": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether message has been read"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When message was sent"
+    }
+  },
+  "required": [
+    "conversation_id",
+    "sender_id",
+    "receiver_id",
+    "content"
+  ]
+}
