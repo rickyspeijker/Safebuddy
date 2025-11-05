@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --lavender: #C7B8FF;
   --midnight: #2C3E91;
