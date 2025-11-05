@@ -2,7 +2,8 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-const BASE_URL = `https://app.base44.com/api/apps/${process.env.BASE44_APP_ID}/entities`;
+const APP_ID = process.env.BASE44_APP_ID || '69065969794f6d47834ae4a2';
+const BASE_URL = `https://app.base44.com/api/apps/${APP_ID}/entities`;
 const API_KEY = process.env.BASE44_API_KEY;
 
 if (!API_KEY) {
